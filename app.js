@@ -70,9 +70,14 @@
     tableau.registerConnector(myConnector)
 })()
 
+const URL_REPORTES = "https://mitct.mitrol.net/"
+
 $(document).ready(function () {
-    $("#submitButton").click(function () { // This event fires when a button is clicked
-        tableau.connectionName = 'Mad Money Picks'
+    $("#btnReport").click(function () { // consulta reportes x web services
+
+    })
+    $("#btnTableau").click(function () { // conecta con Tableau
+        tableau.connectionName = 'MitrolWDC'
         tableau.submit()
     })
 })

@@ -1,0 +1,47 @@
+<html>
+
+    <head>
+        <title>WDC</title>
+        <meta http-equiv="Cache-Control" content="no-store" />
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+        <link href="wdc.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="app" class="">
+            <div class="">
+                <div class="grdForm">
+                    <input class="userInput" v-model="connectionName" placeholder="Ingrese nombre del conector" />
+                    <div v-if="wrongConnectionName" class="error">El nombre del conector es requerido!</div>
+                    <div v-else class="error">.</div>
+
+                    <input class="userInput" v-model="aliasName" placeholder="Ingrese descripcion del conector" />
+                    <div v-if="wrongAliasName" class="error">La descripcion/alias del conector es requerida!</div>
+                    <div v-else class="error">.</div>
+
+                    <input class="userInput" v-model="url" placeholder="Ingrese url del servicio remoto a procesar" />
+                    <button type="button" :disabled="url==''" class="btn btn-info" style="margin: 10px;" @click="callService">Llamar a servicio</button>
+
+                    <button type="button" :disabled="tableData.length==0" class="btn btn-success" style="margin: 10px;" @click="connectToTableau">Conectar a Tableau</button>
+                </div>
+            </div>
+            <div class="frameConsole">
+                len: {{list.length}}
+                <div v-for="msg in list">
+                    msg: {{msg}}
+                </div>
+            </div>
+        </div>
+
+        <script src="https://connectors.tableau.com/libs/tableauwdc-2.1.1.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="./wdc.js" type="text/javascript"></script>
+    </body>
+
+</html>

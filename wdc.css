@@ -1,0 +1,38 @@
+.grdForm {
+    display:grid;
+    padding:20px;
+    justify-items: center;
+    background:lightgray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+    max-width: 600px;
+    margin:auto;
+    margin-top:10%;
+}
+
+.frameConsole{
+    background:lightblue;
+    max-width: 500px;
+    height:1000px;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 10px;
+    padding:20px;
+    margin:auto;
+    margin-top: 5%;
+}
+.userInput {
+	padding: 0 5px;
+	margin: 10px;
+	font-size: 15px;
+	color: #444;
+	background: white;
+	outline: none;
+	border-radius: 5px;
+	height: 35px;
+	justify-self: stretch;
+}
+
+.error{
+    font-size: 11px;
+    color:red;
+}
